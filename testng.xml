@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="OneSight BDD Suite">
+	<test name="OneSight Smoke Testing">
+		<classes>
+			<class name="com.os.qa.runner.TestRunner"></class>
+		</classes>
+	</test>
+</suite>

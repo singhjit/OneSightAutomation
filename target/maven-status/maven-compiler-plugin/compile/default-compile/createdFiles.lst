@@ -1,0 +1,12 @@
+com\os\qa\pages\GroupsPage.class
+com\os\qa\pages\RolesPage.class
+com\os\qa\runner\TestRunner.class
+com\os\qa\stepDefinitions\HomePageSteps.class
+com\os\qa\util\WebEventListener.class
+com\os\qa\pages\MonitorGroupsPage.class
+com\os\qa\base\TestBase.class
+com\os\qa\pages\HomePage.class
+com\os\qa\pages\ConfigurePage.class
+com\os\qa\pages\LoginPage.class
+com\os\qa\pages\UsersPage.class
+com\os\qa\util\TestUtil.class
