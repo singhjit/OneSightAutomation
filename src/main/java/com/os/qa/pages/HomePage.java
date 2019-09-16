@@ -5,6 +5,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import com.os.qa.base.TestBase;
+import com.os.qa.util.Common;
 
 
 
@@ -34,10 +35,7 @@ public class HomePage extends TestBase {
 	}
 
 	public ConfigurePage clickConfigure(){
-
-
-		configureLink.click();		
-
+		Common.actionClick(configureLink);
 		return new ConfigurePage();
 	}
 

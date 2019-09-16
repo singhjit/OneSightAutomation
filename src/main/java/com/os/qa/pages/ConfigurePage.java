@@ -5,6 +5,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import com.os.qa.base.TestBase;
+import com.os.qa.util.Common;
 
 
 public class ConfigurePage extends TestBase {
@@ -30,30 +31,29 @@ public class ConfigurePage extends TestBase {
 	}
 
 	public MonitorGroupsPage clickMonitorGroupLink() {
-		monitorGroupLink.click();		
+		Common.actionClick(monitorGroupLink);
 		return new MonitorGroupsPage();
 	}
 
 	public UsersPage clickUsersLink() {
-		usersLink.click();		
+		Common.actionClick(usersLink);
 		return new UsersPage();
 	}
-	
-	
+
 	public RolesPage clickRolesLink() {
-		rolesLink.click();		
+		Common.actionClick(rolesLink);
 		return new RolesPage();
 	}
 
-	
+
 	public GroupsPage clickGroupsLink() {
-		groupsLink.click();		
+		Common.actionClick(groupsLink);
 		return new GroupsPage();
 	}
 
 	public void clickLogoutLink() {
 		driver.switchTo().defaultContent();
-		logoutLink.click();		
+		Common.actionClick(logoutLink);
 	}
 
 

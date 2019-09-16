@@ -4,7 +4,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+
 import com.os.qa.base.TestBase;
+import com.os.qa.util.Common;
 
 
 
@@ -29,15 +31,10 @@ public class LoginPage extends TestBase{
 		return driver.getTitle();
 	}
 
-	public HomePage login(String un, String pwd){
+	public HomePage OneSightlogin(String un, String pwd){
 		username.sendKeys(un);
 		password.sendKeys(pwd);
-		loginBtn.click();
-		/*
-		 * JavascriptExecutor js = (JavascriptExecutor)driver;
-		 * js.executeScript("arguments[0].click();", loginBtn);
-		 */
-
+		Common.actionClick(loginBtn);
 		return new HomePage();
 	}
 

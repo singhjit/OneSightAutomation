@@ -5,6 +5,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import com.os.qa.base.TestBase;
+import com.os.qa.util.Common;
 
 public class GroupsPage extends TestBase  {
 
@@ -34,7 +35,9 @@ public class GroupsPage extends TestBase  {
 	public GroupsPage clickAddGroups() {
 
 		driver.switchTo().frame("DialogFrame_0");
-		addUserGroupsLink.click();
+
+		Common.actionClick(addUserGroupsLink);
+
 		driver.switchTo().defaultContent();
 		return new GroupsPage();
 	}
@@ -46,8 +49,7 @@ public class GroupsPage extends TestBase  {
 
 		userGroupNameLabel.clear();
 		userGroupNameLabel.sendKeys(groupname);
-
-		userGroupOkButton.click();
+		Common.actionClick(userGroupOkButton);
 		return new GroupsPage();
 	}
 
@@ -55,7 +57,7 @@ public class GroupsPage extends TestBase  {
 
 		driver.switchTo().defaultContent();
 		driver.switchTo().frame("DialogFrame_0");
-		userGroupCloseButton.click();
+		Common.actionClick(userGroupCloseButton);
 		return new ConfigurePage();
 	}
 

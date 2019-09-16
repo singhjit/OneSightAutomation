@@ -5,6 +5,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import com.os.qa.base.TestBase;
+import com.os.qa.util.Common;
 
 public class UsersPage extends TestBase {
 
@@ -30,6 +31,20 @@ public class UsersPage extends TestBase {
 	@FindBy(xpath="//a[contains(text(),'Close')]")
 	WebElement userCloseButton;
 
+	@FindBy(xpath="//td[contains(text(),'automationuser1')]")
+	WebElement removeAutomationuser1;
+
+	@FindBy(xpath="//td[contains(text(),'automationuser2')]")
+	WebElement removeAutomationuser2;
+
+
+	@FindBy(xpath="//span[@id='delete']")
+	WebElement removeUser;
+
+
+	@FindBy(xpath="//a[contains(text(),'Yes')]")
+	WebElement removeUserConfirmation;
+
 	public UsersPage(){
 		PageFactory.initElements(driver, this);
 	}
@@ -38,37 +53,37 @@ public class UsersPage extends TestBase {
 	public UsersPage clickAddUsers() {
 
 		driver.switchTo().frame("DialogFrame_0");
-		addUsersLink.click();
+		Common.actionClick(addUsersLink);
 		driver.switchTo().defaultContent();
 		return new UsersPage();
 	}
 
 
 	public UsersPage fillAddUserDetails(String username, String password, String confirmpassword ) {
-
 		driver.switchTo().frame("DialogFrame_1");
-
 		userNameLabel.clear();
 		userNameLabel.sendKeys(username);
-
 		passwordLabel.clear();
 		passwordLabel.sendKeys(password);
-
 		confirmPasswordLabel.clear();
 		confirmPasswordLabel.sendKeys(confirmpassword);
-
-		addUserOkButton.click();
+		Common.actionClick(addUserOkButton);
 		return new UsersPage();
 	}
 
 	public ConfigurePage clickCloseUser() {
-
 		driver.switchTo().defaultContent();
 		driver.switchTo().frame("DialogFrame_0");
-		userCloseButton.click();
+		Common.actionClick(userCloseButton);
 		return new ConfigurePage();
 	}
 
-
+	public UsersPage clickRemoveUsers() {
+		driver.switchTo().frame("DialogFrame_0");
+		Common.actionClick(removeAutomationuser1);
+		Common.actionClick(removeUser);
+		Common.actionClick(removeUserConfirmation);
+		return new UsersPage();
+	}
 
 }
