@@ -32,10 +32,10 @@ public class UsersPage extends TestBase {
 	WebElement userCloseButton;
 
 	@FindBy(xpath="//td[contains(text(),'automationuser1')]")
-	WebElement removeAutomationuser1;
+	WebElement removeAutomationUser1;
 
 	@FindBy(xpath="//td[contains(text(),'automationuser2')]")
-	WebElement removeAutomationuser2;
+	WebElement removeAutomationUser2;
 
 
 	@FindBy(xpath="//span[@id='delete']")
@@ -80,7 +80,7 @@ public class UsersPage extends TestBase {
 
 	public UsersPage clickRemoveUsers() {
 		driver.switchTo().frame("DialogFrame_0");
-		Common.actionClick(removeAutomationuser1);
+		Common.actionClick(removeAutomationUser1);
 		Common.actionClick(removeUser);
 		Common.actionClick(removeUserConfirmation);
 		return new UsersPage();

@@ -1,14 +1,11 @@
 package com.os.qa.pages;
 
-import org.openqa.selenium.Alert;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.Reporter;
 
 import com.os.qa.base.TestBase;
+import com.os.qa.util.Common;
 
 public class RolesPage extends TestBase {
 
@@ -25,7 +22,23 @@ public class RolesPage extends TestBase {
 	WebElement roleCloseButton;
 
 	@FindBy(xpath = "//a[contains(text(),'Yes')]")
-	WebElement roleConfirmationButton;
+	WebElement roleAddWarningButton;
+
+
+	@FindBy(xpath="//td[contains(text(),'automationrole1')]")
+	WebElement removeAutomationRole1;
+
+	@FindBy(xpath="//td[contains(text(),'automationrole2')]")
+	WebElement removeAutomationRole2;
+
+
+	@FindBy(xpath="//span[@id='delete']")
+	WebElement removeRole;
+
+
+	@FindBy(xpath="//a[contains(text(),'Yes')]")
+	WebElement removeRoleConfirmation;
+
 
 	public RolesPage() {
 		PageFactory.initElements(driver, this);
@@ -34,7 +47,7 @@ public class RolesPage extends TestBase {
 	public RolesPage clickAddRoles() {
 
 		driver.switchTo().frame("DialogFrame_0");
-		addRolesLink.click();
+		Common.actionClick(addRolesLink);
 		driver.switchTo().defaultContent();
 		return new RolesPage();
 	}
@@ -45,14 +58,14 @@ public class RolesPage extends TestBase {
 
 		roleNameLabel.clear();
 		roleNameLabel.sendKeys(rolename);
-		addRoleOkButton.click();
+		Common.actionClick(addRoleOkButton);
 
-		/*
-		 * if (isAlertPresent()) { Alert alert = driver.switchTo().alert();
+		/* if (isAlertPresent()) { Alert alert = driver.switchTo().alert();
 		 * log.info("Alert detected: " + alert.getText()); alert.accept();
 		 * driver.switchTo().defaultContent(); }
 		 */
-		roleConfirmationButton.click();
+
+		Common.actionClick(roleAddWarningButton);
 		return new RolesPage();
 	}
 
@@ -60,8 +73,17 @@ public class RolesPage extends TestBase {
 
 		driver.switchTo().defaultContent();
 		driver.switchTo().frame("DialogFrame_0");
-		roleCloseButton.click();
+		Common.actionClick(roleCloseButton);
 		return new ConfigurePage();
+	}
+
+
+	public RolesPage clickRemoveRoles() {
+		driver.switchTo().frame("DialogFrame_0");
+		Common.actionClick(removeAutomationRole1);
+		Common.actionClick(removeRole);
+		Common.actionClick(removeRoleConfirmation);
+		return new RolesPage();
 	}
 
 	public boolean isAlertPresent() {

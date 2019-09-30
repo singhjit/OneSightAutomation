@@ -1,11 +1,12 @@
 package com.os.qa.stepDefinitions;
 
+import com.os.qa.base.TestBase;
 import com.os.qa.pages.ConfigurePage;
 import com.os.qa.pages.GroupsPage;
 
 import cucumber.api.java.en.Then;
 
-public class GroupsPageSteps {
+public class GroupsPageSteps extends TestBase {
 	
 	ConfigurePage configurepage = new ConfigurePage();
 	GroupsPage grouppage = new GroupsPage();
@@ -31,5 +32,19 @@ public class GroupsPageSteps {
 	public void user_closes_add_group_window() {
 		configurepage = grouppage.clickCloseGroups();
 	}
+	
+	@Then("^user goes to groups page to delete the user group$")
+	public void user_goes_to_groups_page_to_delete_the_user_group() {
+		grouppage = configurepage.clickGroupsLink();
+		
+	}
+
+	@Then("^user selects the user group and remove the user group$")
+	public void user_selects_the_user_group_and_remove_the_user_group() {
+		grouppage = grouppage.clickRemoveGroups();
+		
+	}
+	
+	
 
 }

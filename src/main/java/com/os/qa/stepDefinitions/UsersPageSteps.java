@@ -40,8 +40,6 @@ public class UsersPageSteps extends TestBase{
 
 	@Then("^user goes to user page to delete the user$")
 	public void user_goes_to_user_page_to_delete_the_user() {
-
-	//	driver.switchTo().defaultContent();
 		userpage = configurepage.clickUsersLink();
 	}
 

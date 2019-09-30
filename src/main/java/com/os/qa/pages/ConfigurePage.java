@@ -12,6 +12,9 @@ public class ConfigurePage extends TestBase {
 
 	@FindBy(xpath="//a[contains(text(),'Monitor Groups')]")
 	WebElement monitorGroupLink; 
+	
+	@FindBy(xpath="//a[contains(text(),'Monitors')]")
+	WebElement monitorsLink; 
 
 	@FindBy(xpath="//a[@id='lnk1']")
 	WebElement logoutLink; 
@@ -34,6 +37,14 @@ public class ConfigurePage extends TestBase {
 		Common.actionClick(monitorGroupLink);
 		return new MonitorGroupsPage();
 	}
+	
+	
+	public MonitorPage clickMonitorsLink() {
+		Common.actionClick(monitorsLink);
+		return new MonitorPage();
+	}
+	
+	
 
 	public UsersPage clickUsersLink() {
 		Common.actionClick(usersLink);

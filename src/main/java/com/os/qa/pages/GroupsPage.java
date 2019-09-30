@@ -24,6 +24,22 @@ public class GroupsPage extends TestBase  {
 
 	@FindBy(xpath="//a[contains(text(),'Close')]")
 	WebElement userGroupCloseButton;
+	
+	
+	@FindBy(xpath="//td[@id='treeTable_tcNode_1']")
+	WebElement removeAutomationGroup1;
+
+	@FindBy(xpath="//td[@id='treeTable_tcNode_2']")
+	WebElement removeAutomationGroup2;
+
+
+	@FindBy(xpath="//span[@id='delete']")
+	WebElement removeGroup;
+
+
+	@FindBy(xpath="//a[contains(text(),'Yes')]")
+	WebElement removeGroupConfirmation;
+	
 
 
 
@@ -35,9 +51,7 @@ public class GroupsPage extends TestBase  {
 	public GroupsPage clickAddGroups() {
 
 		driver.switchTo().frame("DialogFrame_0");
-
 		Common.actionClick(addUserGroupsLink);
-
 		driver.switchTo().defaultContent();
 		return new GroupsPage();
 	}
@@ -46,7 +60,6 @@ public class GroupsPage extends TestBase  {
 	public GroupsPage fillAddGroupsDetails(String groupname) {
 
 		driver.switchTo().frame("DialogFrame_1");
-
 		userGroupNameLabel.clear();
 		userGroupNameLabel.sendKeys(groupname);
 		Common.actionClick(userGroupOkButton);
@@ -61,7 +74,13 @@ public class GroupsPage extends TestBase  {
 		return new ConfigurePage();
 	}
 
-
+	public GroupsPage clickRemoveGroups() {
+		driver.switchTo().frame("DialogFrame_0");
+		Common.actionClick(removeAutomationGroup1);
+		Common.actionClick(removeGroup);
+		Common.actionClick(removeGroupConfirmation);
+		return new GroupsPage();
+	}
 
 
 

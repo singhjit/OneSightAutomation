@@ -1,5 +1,7 @@
 package com.os.qa.stepDefinitions;
 
-public class LoginPageSteps {
+import com.os.qa.base.TestBase;
+
+public class LoginPageSteps extends TestBase {
 
 }
