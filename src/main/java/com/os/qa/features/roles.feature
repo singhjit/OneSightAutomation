@@ -8,7 +8,7 @@ Then user enters username and password and logs into onesight
 Then user goes to configure page
 
 
-@RegressionTest
+@SmokeTest 
 Scenario Outline: Validatate User Role Creation
 
 

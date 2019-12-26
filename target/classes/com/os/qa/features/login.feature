@@ -7,8 +7,7 @@ When user is on onesight login page
 Then user enters username and password and logs into onesight
 Then user goes to configure page
 
-
-@SmokeTest @RegressionTest
+@SmokeTest
 Scenario: Validate User Login and Logout
 
 Then user logs out from onesight

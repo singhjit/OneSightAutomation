@@ -11,14 +11,14 @@ import cucumber.api.testng.AbstractTestNGCucumberTests;
 				"classpath:com/os/qa/features/groups.feature",
 				"classpath:com/os/qa/features/roles.feature",
 				"classpath:com/os/qa/features/users.feature",
-		"classpath:com/os/qa/features/monitor.feature"},
+		        "classpath:com/os/qa/features/monitor.feature"},
 
-		//      {"classpath:com/os/qa/features/monitor.feature"},
+		//     {"classpath:com/os/qa/features/roles.feature"},
 		//		{"classpath:com/os/qa/features"},
 
 		glue= {"classpath:com/os/qa/stepDefinitions"},
 		//	tags = {"@SmokeTest" , "@RegressionTest", "~@End2EndTest"},	
-		tags = {"@SmokeTest , @RegressionTest"},	
+		tags = {"@SmokeTest"},	
 		format = {
 				"pretty",
 				"html:target/cucumber-reports/cucumber-pretty",

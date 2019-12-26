@@ -18,9 +18,6 @@
 
 	<dependencies>
 
-		<!-- <dependency> <groupId>junit</groupId> <artifactId>junit</artifactId> 
-			<version>4.12</version> <scope>test</scope> </dependency> -->
-
 		<dependency>
 			<groupId>org.testng</groupId>
 			<artifactId>testng</artifactId>
@@ -61,11 +58,6 @@
 			<version>1.2.5</version>
 		</dependency>
 
-
-		<!-- <dependency> <groupId>info.cukes</groupId> <artifactId>cucumber-junit</artifactId> 
-			<version>1.2.5</version> </dependency> -->
-
-
 		<dependency>
 			<groupId>info.cukes</groupId>
 			<artifactId>cucumber-jvm-deps</artifactId>
@@ -94,12 +86,12 @@
 			<version>4.0.7</version>
 		</dependency>
 
-
 		<dependency>
 			<groupId>net.masterthought</groupId>
 			<artifactId>cucumber-reporting</artifactId>
 			<version>3.8.0</version>
 		</dependency>
+
 
 
 		<dependency>
@@ -155,17 +147,16 @@
 							<goal>generate</goal>
 						</goals>
 						<configuration>
-							<projectName>OneSight Automation</projectName>
+							<projectName>OneSight</projectName>
 							<outputDirectory>target/cucumber-reports/advanced-reports</outputDirectory>
 							<cucumberOutput>target/cucumber-reports/CucumberTestReport.json</cucumberOutput>
-							<buildNumber>1</buildNumber>
+							<buildNumber>1.0</buildNumber>
 							<parallelTesting>false</parallelTesting>
-							<checkBuildResult>true</checkBuildResult>
+							<checkBuildResult>false</checkBuildResult>
 						</configuration>
 					</execution>
 				</executions>
 			</plugin>
 		</plugins>
 	</build>
-
 </project>
